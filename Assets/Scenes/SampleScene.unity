@@ -756,17 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3126e4d07feec5f4c89f6d2fd0ae9eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 7705553865360469077, guid: e90e3a765a113bf4ea4be15a0a09c54d, type: 3}
-  - {fileID: 7705553865360469077, guid: 3791a2beb23dc6d46a9b3a0bfc0b5ff0, type: 3}
-  - {fileID: 7705553865360469077, guid: 57c3d86b654a68e4bbb324aa5f32c3c6, type: 3}
-  - {fileID: 7705553865360469077, guid: 478666751e2272a43a30feaea26c61ae, type: 3}
-  - {fileID: 7705553865360469077, guid: c60e394b0c1a4184e940946f2da6dcc3, type: 3}
-  - {fileID: 7705553865360469077, guid: e322678e63617344fbd33f17766f270b, type: 3}
-  - {fileID: 7705553865360469077, guid: f3db888f4ebcd98449acda152d3f348d, type: 3}
-  - {fileID: 7705553865360469077, guid: e616edc96f44bc444a6f09f8515bf88b, type: 3}
-  - {fileID: 7705553865360469077, guid: 90ea2415e2e06ab49a89496e26e4751c, type: 3}
-  - {fileID: 7705553865360469077, guid: 6f249fb7bf7c0e74eb70f88f94c4e22b, type: 3}
+  enemyPrefab: {fileID: 7705553865360469077, guid: e90e3a765a113bf4ea4be15a0a09c54d, type: 3}
   spawnPoint: {fileID: 848168897}
 --- !u!4 &1866647147
 Transform:

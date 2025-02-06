@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour
 {
-    public float speed = 10f; // Tốc độ đạn
-    private Vector2 direction; // Hướng di chuyển của viên đạn
-
-    private Transform homingTarget; // Mục tiêu tự dẫn
- 
-
-    
-   
-
+    public float speed = 10f;
+    private Vector2 direction;
+    private Transform homingTarget;
 
     public void SetDirection(Vector2 newDirection)
     {
-        direction = newDirection.normalized; // Đảm bảo hướng được chuẩn hóa
+        direction = newDirection.normalized;
     }
 
     public void SetHomingTarget(Transform target)
@@ -26,8 +20,7 @@ public class EnemyBulletController : MonoBehaviour
 
     void Update()
     {
-       
-         if (homingTarget != null)
+        if (homingTarget != null)
         {
             Vector2 homingDirection = (homingTarget.position - transform.position).normalized;
             transform.position += (Vector3)homingDirection * speed * Time.deltaTime;
@@ -40,17 +33,15 @@ public class EnemyBulletController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject); // Hủy viên đạn khi ra khỏi màn hình
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       
-        if ( other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().Die();
+            // other.GetComponent<PlayerController>().Die();
             Destroy(gameObject);
         }
     }
-
 }
