@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
                 break;
             case EnemyType.Random:
                 CancelInvoke(nameof(Shoot));
-                InvokeRepeating(nameof(ShootRandom), 0f, 0.5f); // Tăng tần số bắn cho kiểu Random
+                InvokeRepeating(nameof(ShootRandom), 0f, 0.1f); // Tăng tần số bắn cho kiểu Random
                 break;
         }
     }
