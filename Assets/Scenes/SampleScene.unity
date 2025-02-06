@@ -444,8 +444,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860269523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.000000029802322, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 5
-  bulletPrefab: {fileID: 4499768446204486837, guid: 572eb5cbdcba7f34fb41ea39e494cd6c, type: 3}
+  bulletPrefab: {fileID: 4499768446204486837, guid: 7c712f47eba7cc3428b4d408432b416a, type: 3}
   bulletSpawnPoint: {fileID: 309711582}
 --- !u!1 &1499816601
 GameObject:
@@ -757,16 +757,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 7705553865360469077, guid: cb071fe0203ac3f41af8c4e1d177a23c, type: 3}
-  - {fileID: 3429972059154173144, guid: 0210c02e4cf9e0d45942a192384e95dc, type: 3}
-  - {fileID: 7942846707483745400, guid: 4d7687268657f42438ea95d5039013cd, type: 3}
-  - {fileID: 7705553865360469077, guid: bc47373195590a7409086285c16ce422, type: 3}
-  - {fileID: 7705553865360469077, guid: 0354e8cc4e317474b9186f4cb1c6c6bb, type: 3}
-  - {fileID: 7705553865360469077, guid: 4d0e50298dc5a164e81def08af378e49, type: 3}
-  - {fileID: 7705553865360469077, guid: e746225d083ea2343a427f8c075e9751, type: 3}
-  - {fileID: 7705553865360469077, guid: 5da4065bda5eec948bcb732cd2f7b290, type: 3}
-  - {fileID: 7705553865360469077, guid: c946c5304ca52d64f9b2c038c8fc4481, type: 3}
-  - {fileID: 7705553865360469077, guid: cd49c2fddd5fab34582d39a87d2e7684, type: 3}
+  - {fileID: 7705553865360469077, guid: e90e3a765a113bf4ea4be15a0a09c54d, type: 3}
+  - {fileID: 7705553865360469077, guid: 3791a2beb23dc6d46a9b3a0bfc0b5ff0, type: 3}
+  - {fileID: 7705553865360469077, guid: 57c3d86b654a68e4bbb324aa5f32c3c6, type: 3}
+  - {fileID: 7705553865360469077, guid: 478666751e2272a43a30feaea26c61ae, type: 3}
+  - {fileID: 7705553865360469077, guid: c60e394b0c1a4184e940946f2da6dcc3, type: 3}
+  - {fileID: 7705553865360469077, guid: e322678e63617344fbd33f17766f270b, type: 3}
+  - {fileID: 7705553865360469077, guid: f3db888f4ebcd98449acda152d3f348d, type: 3}
+  - {fileID: 7705553865360469077, guid: e616edc96f44bc444a6f09f8515bf88b, type: 3}
+  - {fileID: 7705553865360469077, guid: 90ea2415e2e06ab49a89496e26e4751c, type: 3}
+  - {fileID: 7705553865360469077, guid: 6f249fb7bf7c0e74eb70f88f94c4e22b, type: 3}
   spawnPoint: {fileID: 848168897}
 --- !u!4 &1866647147
 Transform:

@@ -40,9 +40,9 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
+        PlayerBulletController bulletController = bullet.GetComponent<PlayerBulletController>();
         bulletController.SetDirection(Vector2.right);//ban tu trai qua phai
-        bulletController.bulletType = BulletController.BulletType.PlayerBullet;
+       
     }
     public void Die()
     {

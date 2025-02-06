@@ -7,13 +7,13 @@ public enum EnemyType
 {
     Straight,      // Bắn thẳng
     Spread,        // Bắn tia
-    SinWave,       // Hình sin
+
     Circular,      // Quỹ đạo tròn
     Burst,         // Bắn theo đợt
-    Zigzag,        // Đạn zigzag
+
     Homing,        // Đạn tự dẫn
     Spiral,        // Quỹ đạo xoắn ốc
-    Explosive,     // Đạn nổ khi chạm
+
     Random         // Đạn bay ngẫu nhiên
 }
 
@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
     void ChangeDirection()
     {
-        targetY = UnityEngine.Random.Range(-3f, 3f); // Vị trí ngẫu nhiên trên trục Y
+        targetY = UnityEngine.Random.Range(-5f, 5f); // Vị trí ngẫu nhiên trên trục Y
     }
 
     void Shoot()
@@ -48,27 +48,21 @@ public class EnemyController : MonoBehaviour
             case EnemyType.Spread:
                 ShootSpread();
                 break;
-            case EnemyType.SinWave:
-                ShootSinWave();
-                break;
+      
             case EnemyType.Circular:
                 ShootCircular();
                 break;
             case EnemyType.Burst:
                 StartCoroutine(ShootBurst());
                 break;
-            case EnemyType.Zigzag:
-                ShootZigzag();
-                break;
+          
             case EnemyType.Homing:
                 ShootHoming();
                 break;
             case EnemyType.Spiral:
                 StartCoroutine(ShootSpiral());
                 break;
-            case EnemyType.Explosive:
-                ShootExplosive();
-                break;
+            
             case EnemyType.Random:
                 ShootRandom();
                 break;
@@ -78,9 +72,9 @@ public class EnemyController : MonoBehaviour
     void ShootStraight()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.SetDirection(Vector2.left);
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+        EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+        EnemyBulletController.SetDirection(Vector2.left);
+         
     }
     void ShootSpread()
     {
@@ -93,24 +87,16 @@ public class EnemyController : MonoBehaviour
         foreach (Vector2 direction in directions)
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.SetDirection(direction);
-            bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+            EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+            EnemyBulletController.SetDirection(direction);
+             
 
         }
         
 
     }
 
-    void ShootSinWave()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.SetDirection(Vector2.left);
-        bulletController.isSinWave = true;
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
-
-    }
+ 
 
     void ShootCircular()
     {
@@ -120,9 +106,9 @@ public class EnemyController : MonoBehaviour
             float angle = i * Mathf.PI * 2 / bulletsCount;
             Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.SetDirection(direction);
-            bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+            EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+            EnemyBulletController.SetDirection(direction);
+             
 
         }
     }
@@ -133,30 +119,22 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < burstCount; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.SetDirection(Vector2.left);
+            EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+            EnemyBulletController.SetDirection(Vector2.left);
             yield return new WaitForSeconds(0.2f); // Tạm dừng giữa mỗi viên đạn
-            bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+             
 
         }
     }
 
-    void ShootZigzag()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.SetDirection(Vector2.left);
-        bulletController.isZigzag = true; // Thêm logic zigzag trong BulletController
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
-
-    }
+  
 
     void ShootHoming()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.SetHomingTarget(GameObject.FindWithTag("Player").transform);
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+        EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+        EnemyBulletController.SetHomingTarget(GameObject.FindWithTag("Player").transform);
+         
 
     }
 
@@ -168,31 +146,24 @@ public class EnemyController : MonoBehaviour
         {
             Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.SetDirection(direction);
+            EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+            EnemyBulletController.SetDirection(direction);
             angle += Mathf.PI / 10; // Tăng góc để tạo xoắn ốc
             yield return new WaitForSeconds(0.1f);
-            bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+             
 
         }
     }
 
-    void ShootExplosive()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.isExplosive = true; // Thêm logic nổ trong BulletController
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
 
-    }
 
     void ShootRandom()
     {
         Vector2 randomDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.SetDirection(randomDirection);
-        bulletController.bulletType = BulletController.BulletType.EnemyBullet; 
+        EnemyBulletController EnemyBulletController = bullet.GetComponent<EnemyBulletController>();
+        EnemyBulletController.SetDirection(randomDirection);
+         
 
     }
 
